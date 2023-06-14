@@ -1,7 +1,8 @@
+import 'package:bitmascot_task/ui/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import '../configure/app_colors.dart';
 import '../configure/app_widgets.dart';
-import '../controller/api_controller.dart';
+import '../controller/controller_initializer.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -110,15 +111,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             color: AppColors.blueColor,
                             style: AppStyle.title2,
                             press: () {
-                              if (loginController.formKey.currentState
-                                      ?.validate() ==
-                                  true) {
-                                String email =
-                                    loginController.emailTextController.text;
-                                String password =
-                                    loginController.passwordTextController.text;
-                                debugPrint('Email: $email');
-                                debugPrint('Password: $password');
+                              if (loginController.formKey.currentState?.validate() == true) {
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => const DashBoardScreen(),),);
                               }
                             },
                           ),

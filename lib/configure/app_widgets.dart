@@ -159,7 +159,7 @@ class AppWidgets {
   }
 
   ///for wrong snack bar
-  wrongSnackBar(BuildContext context, String exp) {
+  wrongSnackBar(String exp) {
     return Get.snackbar(
       'Something wrong',
       exp,
