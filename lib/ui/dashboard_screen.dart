@@ -1,5 +1,6 @@
 import 'package:bitmascot_task/configure/app_colors.dart';
 import 'package:bitmascot_task/controller/controller_initializer.dart';
+import 'package:bitmascot_task/ui/movie_details.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -40,7 +41,8 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                           leading: item.thumbnailUrl == null ? Image.asset('assets/images/thumbnail.jpg') : Image.network(item.thumbnailUrl ?? ''),
                           title: InkWell(
                             onTap: (){
-                              print('object ${item.url}');
+                              dashBoardController.movieUrl.value = item.url ?? '';
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const MovieDetailsScreen()));
                             },
                             child: Text(
                               item.title ?? 'Title',

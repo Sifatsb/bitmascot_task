@@ -8,6 +8,7 @@ import 'package:http/http.dart' as http;
 
 class DashBoardController extends GetxController {
   RxInt currentPage = 1.obs;
+  RxString movieUrl = ''.obs;
   int perPage = 10;
 
   RxList<MovieResponseModel> data = <MovieResponseModel>[].obs;
